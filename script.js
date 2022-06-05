@@ -26,7 +26,7 @@ function writePassword() {
     window.alert("The length of password must be at least 8 characters and no more than 128 characters.")
     return;
   }
-  
+
   // Ask employee to confirm including special characters. 
   var specialCharacter = window.confirm("Click OK to confirm including special characters.")
 
@@ -63,14 +63,21 @@ function writePassword() {
     pool = pool.concat(character.toUpperCase());
   }
 
+  // Check if at least one criteria is chosen. 
+  if (!specialCharacter && !numericCharacter && !lowercaseCharacter && !uppercaseCharacter) {
+    window.alert("At least one criteria must be chosen.")
+    return;
+  } 
+
   // Generate the password based on all the criteria.
   function generatePassword() {
-    for (i = 0; i < passwordLength; i++) {
+    var i = 0;
+    for ( var i = 0; i < passwordLength; i++) {
       result += pool.charAt(Math.floor(Math.random() * passwordLength));
     }
-    return result;
+    
   }
-  return password;
+
 }
 
 // Add event listener to generate button
