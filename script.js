@@ -71,13 +71,19 @@ function writePassword() {
 
   // Generate the password based on all the criteria.
   function generatePassword() {
-    var i = 0;
     for ( var i = 0; i < passwordLength; i++) {
-      result += pool.charAt(Math.floor(Math.random() * passwordLength));
+      result += pool.charAt(Math.floor(Math.random() * pool.length));
     }
-    
+    return result;
   }
 
+  // Run the function to get the result. 
+  generatePassword();
+
+  // Assign the result on page
+  document.getElementById("password").innerHTML = result;
+  window.alert(result);
+  
 }
 
 // Add event listener to generate button
