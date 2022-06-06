@@ -81,9 +81,8 @@ function writePassword() {
   generatePassword();
 
   // Assign the result on page
-  document.getElementById("password").innerHTML = result;
-  window.alert(result);
-  
+  document.querySelector("textarea").value = result;
+
 }
 
 // Add event listener to generate button
