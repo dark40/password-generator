@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  
+
   // Ask employee to choose the length of the password.
   var passwordLength = window.prompt("How many characters would you like your password to contain?");
 
@@ -63,11 +63,11 @@ function writePassword() {
   if (!specialCharacter && !numericCharacter && !lowercaseCharacter && !uppercaseCharacter) {
     window.alert("At least one criteria must be chosen.")
     return;
-  } 
+  }
 
   // Generate the password based on all the criteria.
   function generatePassword() {
-    for ( var i = 0; i < passwordLength; i++) {
+    for (var i = 0; i < passwordLength; i++) {
       result += pool.charAt(Math.floor(Math.random() * pool.length));
     }
     return result;
